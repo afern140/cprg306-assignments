@@ -73,20 +73,11 @@ export default function ItemList(){
         category: "Household",
       };
 
-      const itemsArray = new Array(item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12);
-      const displayItemsArray = new Array();
-
-      let displayItem = "";
-      for (let x of itemsArray){
-        displayItem = <Item name={x.name} quantity={x.quantity} category={x.category}/>;
-        displayItemsArray.push(displayItem);
-      }
+      const itemsList = [item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12];
 
       return(
-        <section>
-            <ul>
-                {displayItemsArray.map((item) => (<li>{item}</li>))}
-            </ul>
-        </section>
+        <ul className="space-y-5">
+          {itemsList.map((item) => (<Item key = {item.name} name={item.name} quantity={item.quantity} category={item.category}/>))}
+        </ul>
       )
 }

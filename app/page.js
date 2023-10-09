@@ -8,9 +8,10 @@ export default function Home(){
         <h1 className="text-4xl">CPRG 306: Web Development 2 - Assignments</h1><br/>
         <StudentInfo/><br/>
         <h2 className="text-3xl">Weeks</h2><br/>
-        <ul className="bg-[#759fbcff] p-4 rounded">
+        <ul className="bg-[#5ebce4] p-4 rounded">
           <li><Link href="/week2">Week 2</Link></li>
           <li><Link href="/week3">Week 3</Link></li>
+          <li><Link href="/week4">Week 4</Link></li>
         </ul>
       </section>
     </main>
