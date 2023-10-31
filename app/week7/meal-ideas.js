@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from "react"
 
-async function fetchMealIdeas({ ingredient }){
+async function fetchMealIdeas(ingredient){
 	try{
 		const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`)
-		const data = await response.json();
+		const {data} = await response.json();
 		return data;
 	}
 	catch(error){
@@ -26,8 +26,8 @@ export default function MealIdeas({ ingredient }){
 		<section>
 			<h2>Meal Ideas</h2>
 			{meals ? <h3>Some meal ideas using {ingredient} include:</h3> : <h3>No meal ideas for {ingredient}</h3>}
-			<ul className="space-y-5">
-				{meals.map((meal) => (<li key = {meal.idMeal}>{meal.strMeal}</li>))}
+			<ul>
+				{meals && meals.map((meal) =>  (<li key = {meal.idMeal} className="bg-[#b33232] hover:bg-[#b3323288] active:bg-[#61b33288] p-4 rounded space-y-2">{meal.strMeal}</li>))}
 			</ul>
 		</section>
 	)
